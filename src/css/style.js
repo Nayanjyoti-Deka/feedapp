@@ -60,6 +60,50 @@ import {StyleSheet} from 'react-native';
     color : '#F08080',
     marginTop:'20%',
     fontWeight:'bold'
+  },
+  thirdContainer:{
+    flex:1,
+    textAlign:'center',
+
+  },
+  roundImage:{
+      marginTop:20,
+      width: 100,
+      height: 100,
+      borderRadius: 100/ 2,
+  },
+  name :{
+      marginTop:30,
+      fontSize: 30,
+      fontWeight:'bold',
+  },
+  industries:{
+      fontSize: 20,
+
+},
+  uxbutton:{
+    borderWidth:1,
+    borderColor:'#A9A9A9',
+    alignItems:'center',
+    justifyContent:'center',
+    width:100,
+    height:60,
+    backgroundColor:'#fff',
+    borderRadius:50,
+  },
+  uxtext:{
+    textAlign: 'center',
+    color:'#A9A9A9',
+    fontSize:18,
+    borderWidth:1,
+    borderColor:'#A9A9A9',
+},
+  collaborate: {
+    backgroundColor:'#DCDCDC',
+    height:50,
+    width:'100%',
+    borderWidth:1,
+    borderColor: '#A9A9A9',
   }
 
 });

@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import {View,Text,TouchableOpacity} from 'react-native';
+import FeedDetails from './FeedDetails';
 
 export default class Feeds extends Component{
       constructor(props){
           super(props);
           this.state = {
               feed : [],
+              showTheDetails : false,
           }
 
       };
@@ -25,7 +27,7 @@ export default class Feeds extends Component{
         axios.get('https://frozen-shore-39944.herokuapp.com/irshad/feeds/'+data.id)
               .then((response)=>{
                     console.log(response.data.data);
-                    //console.log(response.data.data);
+                    this.setState({showTheDetails:true})
                 })
               .catch(function (error){
                     console.log(error);
@@ -50,6 +52,9 @@ export default class Feeds extends Component{
                             </TouchableOpacity>
                         )
                   })}
+                  { this.state.showTheDetails &&
+                    <FeedDetails/>
+                  }
             </View>
 
         );

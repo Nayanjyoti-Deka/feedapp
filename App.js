@@ -25,11 +25,12 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import FirstCard from './src/components/FirstCard';
 import SecondCard from './src/components/SecondCard';
+import ThirdCard from './src/components/ThirdCard';
 import Feeds from './src/components/Feeds';
 
 const App = () => {
   return (
-    <Feeds/>
+    <ThirdCard/>
   );
 };
 

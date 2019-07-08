@@ -1,37 +1,44 @@
 import React,{Component} from 'react';
-import {View,Stylesheet,Image,Text} from 'react-native';
+import {View,Stylesheet,Image,Text,Modal,TouchableHighlight} from 'react-native';
 import axios from 'axios';
 import Icon from 'react-native-vector-icons/EvilIcons';
 import styles from '../css/style.js';
 
 
-export default class FirstCard extends Component{
+export default class FeedDetails extends Component{
     constructor(props){
           super(props);
           this.state ={
               url : '',
+              visibility : true,
           };
     };
+    setModalVisible(visible) {
+        this.setState({visibility: visible});
+      }
 
-    // componentWillMount(){
-    //   var self = this;
-    //         axios.get('http://tinypic.com/m/kc1fdl/1')
-    //               .then(function (response){
-    //                     console.log(response.data);
-    //                     self.setState({url:response.data})
-    //                 })
-    //               .catch(function (error){
-    //                     console.log(error);
-    //                 });
-    // }
     render(){
 
           return(
                 <View style={styles.container}>
-                      <Image source={{uri:'http://oi66.tinypic.com/10zmejr.jpg'}} style={styles.backgroundImage}/>
+                <Modal
+                      animationType="slide"
+                      transparent={false}
+                      visible={this.state.visibility}
+                    >
+
+              <Image source={{uri:'http://oi66.tinypic.com/10zmejr.jpg'}} style={styles.backgroundImage}/>
+
+
+            <TouchableHighlight
+                onPress={() => {
+                  this.setModalVisible(!this.state.visibility);
+                }}>
                       <View style={styles.topView}>
                           <Text style={styles.domesticTxt}>Domestic</Text>
                       </View>
+            </TouchableHighlight>
+
                       <View style={styles.bottomView}>
                           <Text style={styles.bottombigTxt}>Fishing In The Congo</Text>
                           <View style={styles.bottomEndView}>
@@ -39,6 +46,7 @@ export default class FirstCard extends Component{
                                 <Text style={styles.bottomEndTxt}>Democratic Republic Of The Congo</Text>
                           </View>
                       </View>
+                  </Modal>
                 </View>
 
         );
