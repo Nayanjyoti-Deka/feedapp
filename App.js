@@ -30,7 +30,7 @@ import Feeds from './src/components/Feeds';
 
 const App = () => {
   return (
-    <ThirdCard/>
+    <Feeds/>
   );
 };
 
